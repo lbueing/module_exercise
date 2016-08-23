@@ -56,35 +56,43 @@
 
 #Testing out the traveller gem!
 
-  # require 'traveller'
-  #
-  # trav = Traveller.new("Seattle, Minnesota 98101")
+  require 'traveller'
 
-  # puts traveller1.city
-  # puts traveller1.zip
+  # trav1 = Traveller.new("Seattle, Minnesota 98101")
+  # puts trav1
+  # puts trav1.city
+  # puts trav1.zip
   #
-  # trav.state = "Washington"
+  # trav1.state = "Washington"
   #
-  # puts traveller1.state
+  # puts trav1.state
 
 
 ###################################
 ###### TRAVELLER GEM STEP TWO #####
 ###################################
 
-#I want to create a new class for travellers, called traveller. What could possibly go wrong?
-  # class Traveller
-  #   attr_accessor :name, :email, :city, :state
-  #   def initialize(details_hash)
-  #     @name = details_hash[:name]
-  #     @email = details_hash[:email]
-  #     @location = Traveller.new(details_hash[:location])
-  #   end
-  # end
-
-  #Tests to use the Traveller Gem (after my class has been created. )
-    # traveller2 = Traveller.new("Chicago 60611 IL")
-    # puts Traveller.state
+# #I want to create a new class for travellers, called traveller. What could possibly go wrong?
+# module Expedia
+#   class Traveller
+#     attr_accessor :name, :email, :location
+#     def initialize(details_hash)
+#       @name = details_hash[:name]
+#       @email = details_hash[:email]
+#       @location = details_hash[:location]
+#     end
+#   end
+# end
+#
+#   #Tests to use the Traveller Gem (after my class has been created. )
+#     traveller2 = Traveller.new("Chicago 60611 IL")
+#     puts traveller2.state
+#
+#     location = Traveller.new("Seattle, WA 98101")
+#     user1 = Expedia::Traveller.new({name: "name", email: "email", location: location})
+#     puts user1.name
+#     puts user1.email
+#     puts user1.location.state
 
   #Hmm. It doesn't work. Oh bother.
   #How would we possibly fix this so I don't have to change the name of MY class but still be able to use this gem?
@@ -110,38 +118,38 @@
 
 
 
-      #   module Blackjack
-      #     MAX_SCORE = 21
-      #     module Player
-      #         MAX_PLAYERS = 2
-      #         class Player
-      #           def initialize
-      #           end
-      #         end
-      #     end
-      #     module Card
-      #         MAX_VALUE = 13
-      #         class Card
-      #           def get_max_value()
-      #               return MAX_VALUE
-      #           end
-      #         end
-      #     end
-      # end
+        module Blackjack
+          MAX_SCORE = 21
+          module Player
+              MAX_PLAYERS = 2
+              class Player
+                def initialize
+                end
+              end
+          end
+          module Card
+              MAX_VALUE = 13
+              class Card
+                def get_max_value()
+                    return MAX_VALUE
+                end
+              end
+          end
+        end
+
+      MAX_SCORE = 50
+      MAX_PLAYERS = 4
+      MAX_VALUE = 21
+
+      puts "MAX_SCORE - #{MAX_SCORE}"
+      puts "Blackjack::MAX_SCORE - #{Blackjack::MAX_SCORE}"
+
+      # puts
       #
-      # MAX_SCORE = 50
-      # MAX_PLAYERS = 4
-      # MAX_VALUE = 21
-      #
-      # puts "MAX_SCORE - #{MAX_SCORE}"
-      # puts "Blackjack::MAX_SCORE - #{Blackjack::MAX_SCORE}"
+      puts "MAX_Players - #{MAX_PLAYERS}"
+      puts "Blackjack::Player::MAX_Players - #{Blackjack::Player::MAX_PLAYERS}"
       #
       # puts
       #
-      # puts "MAX_Players - #{MAX_PLAYERS}"
-      # puts "Blackjack::Player::MAX_Players - #{Blackjack::Player::MAX_PLAYERS}"
-      #
-      # puts
-      #
-      # puts "MAX_VALUE - #{MAX_VALUE}"
-      # puts "Blackjack::Card::get_max_value -  #{Blackjack::Card::Card.new().get_max_value()}"`
+      puts "MAX_VALUE - #{MAX_VALUE}"
+      puts "Blackjack::Card::get_max_value - #{Blackjack::Card::Card.new().get_max_value()}"
